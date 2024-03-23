@@ -17,8 +17,11 @@
 #ifndef SD_FAT_TYPE
 #define SD_FAT_TYPE 1
 #endif
+
 // Try max SPI clock for an SD. Reduce SPI_CLOCK if errors occur. (40?)
+#ifndef SPI_CLOCK
 #define SPI_CLOCK SD_SCK_MHZ(50)
+#endif
 
 #if SD_FAT_TYPE == 0
 	typedef SdFat AudioFs;
